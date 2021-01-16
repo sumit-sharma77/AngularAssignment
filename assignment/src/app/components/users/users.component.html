@@ -1,0 +1,29 @@
+
+
+  <div class="container mt-6" *ngIf = "users.length>0; else noUsers">
+    
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered has-background-light"  >
+        <caption >List of users</caption>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+        </thead>
+     
+        <tbody *ngFor="let user of users;let i = index">
+          <tr >
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.email}}</td>
+          </tr>
+       
+        </tbody>
+      </table>
+  </div>
+
+  <ng-template #noUsers>
+   <p> No Users found</p>
+  </ng-template>
